@@ -1,13 +1,13 @@
-function Get-Customer () {
+function Remove-Customer () {
 
   <#
   .SYNOPSIS
-  This function is used to get a single customer record in Syncro. 
+  This function is used to remove a single customer record in Syncro. 
   .EXAMPLE
-  Get-Customer -id <integer>
-  Retrieves a single customer by id
+  Remove-Customer -id <integer>
+  Removes a single customer by id
   .NOTES
-  Required permission: Customers - View Detail Single-Customer Users can only access own customer (self).
+  Required permission: Customers - Delete
   #>
   
   [cmdletbinding()]
@@ -24,7 +24,7 @@ function Get-Customer () {
 }
   
   $url =  "$($SyncroBaseURL)/customers?api_key=$($Snycro_API_Key)&id=$($id)"
-  $response = Invoke-RestMethod -Uri $url -Method Get -ContentType 'application/json'
+  $response = Invoke-RestMethod -Uri $url -Method Delete -ContentType 'application/json'
   $response
   
   }

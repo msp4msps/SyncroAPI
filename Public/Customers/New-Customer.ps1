@@ -2,14 +2,14 @@ function New-Customer () {
 
   <#
   .SYNOPSIS
-  This function is used to get all customer records in Syncro. 
+  This function is used to create a new customer in Syncro. 
   .DESCRIPTION
-  The function connects to your Syncro environment and finds all customers
+  The function connects to your Syncro environment and creates a new customer 
   .EXAMPLE
-  Get-AllCustomers -SyncroSubDomain $SyncroSubDomain -SyncroAPIKey $SyncroAPIkey
-  Retrieves all customers
+  New-Customer -businessName <string> -address <string> -city <city> -state <state> -zip <zip> -phone <string> -firstName <string> -lastName <string>
+  Creates new customer in Syncro with metadata 
   .NOTES
-  NAME: GetAll-Customers
+  Required permission: Customers - Create
   #>
   
   [cmdletbinding()]
@@ -25,7 +25,7 @@ function New-Customer () {
       [string]$firstName,
       [string]$lastName
   )
-  
+
     if (!$SyncroBaseURL -or !$Snycro_API_Key) {
         Write-Warning "You must first run Connect-SyncroPSA before calling any other cmdlets" 
         break 

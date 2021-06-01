@@ -1,7 +1,7 @@
 function Get-AllCustomers () {
 
   <#
-  .SYNOPSIS
+  .SYNOPSIS 
   This function is used to get all customer records in Syncro. 
   .DESCRIPTION
   The function connects to your Syncro environment and finds all customers
@@ -9,7 +9,8 @@ function Get-AllCustomers () {
   Get-AllCustomers -SyncroSubDomain $SyncroSubDomain -SyncroAPIKey $SyncroAPIkey
   Retrieves all customers
   .NOTES
-  NAME: GetAll-Customers
+  NAME: Get-AllCustomers
+  REQUIRED PERMISSION:Customers - List/Search Single-Customer Users can only access own customer (self). 
   #>
   
   [cmdletbinding()]
