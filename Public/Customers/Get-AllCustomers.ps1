@@ -6,7 +6,7 @@ function Get-AllCustomers () {
   .DESCRIPTION
   The function connects to your Syncro environment and finds all customers
   .EXAMPLE
-  Get-AllCustomers -SyncroSubDomain $SyncroSubDomain -SyncroAPIKey $SyncroAPIkey
+  Get-AllCustomers
   Retrieves all customers
   .NOTES
   NAME: Get-AllCustomers
